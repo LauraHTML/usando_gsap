@@ -1,1 +1,122 @@
 @import "tailwindcss";
+
+/* Nordic Studio — Scandinavian-inspired design system */
+
+@theme {
+    /* Typography */
+    --font-sans: "Inter", "Helvetica Neue", sans-serif;
+
+    /* Rounded, friendly UI */
+    --radius-sm: 0.75rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.5rem;
+    --radius-xl: 2rem;
+    --radius-2xl: 2.5rem;
+    --radius-full: 9999px;
+
+    /* Brand palette */
+    --color-nordic-50: #f8f7f2;
+    --color-nordic-100: #eeede5;
+    --color-nordic-200: #dcdcd0;
+    --color-nordic-300: #c2c5b5;
+    --color-nordic-400: #9ca58f;
+    --color-nordic-500: #78866f;
+    --color-nordic-600: #5d6c55;
+    --color-nordic-700: #455440;
+    --color-nordic-800: #303c2e;
+    --color-nordic-900: #20291f;
+
+    /* Joyful accents */
+    --color-lilac: #c9b8f5;
+    --color-lilac-deep: #9b80dc;
+    --color-butter: #f6d96b;
+    --color-coral: #fa927d;
+    --color-mint: #a9dec9;
+    --color-sky: #a8d5f2;
+    --color-berry: #d95e7c;
+
+    /* Semantic colors */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-surface: var(--surface);
+    --color-surface-muted: var(--surface-muted);
+    --color-border: var(--border);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-accent: var(--accent);
+    --color-muted: var(--muted);
+}
+
+/* LIGHT MODE */
+:root {
+    color-scheme: light;
+    --background: #f8f7f2;
+    --foreground: #252922;
+    --surface: #ffffff;
+    --surface-muted: #eeede5;
+    --border: #e2e0d7;
+    --primary: #455440;
+    --primary-foreground: #ffffff;
+    --secondary: #f472b6;
+    --primary-foreground: #ffffff;
+    --accent: #c9b8f5;
+    --muted: #777b70;
+
+    --card-shadow: 0 8px 30px rgb(37 41 34 / 5%);
+}
+
+/* DARK MODE */
+.dark {
+    color-scheme: dark;
+
+    --background: #20241f;
+    --foreground: #f4f1e8;
+
+    --surface: #2a2f28;
+    --surface-muted: #343a31;
+
+    --border: #41483d;
+
+    --primary: #c9b8f5;
+    --primary-foreground: #252034;
+
+    --secondary: #f472b6;
+    --primary-foreground: #ffffff;
+
+    --accent: #f6d96b;
+    --muted: #b1b5a9;
+
+    --card-shadow: 0 8px 30px rgb(0 0 0 / 15%);
+}
+
+/* Base styles */
+@layer base {
+    * {
+        border-color: var(--border);
+    }
+
+    body {
+        background-color: var(--background);
+        color: var(--foreground);
+        font-family: var(--font-sans);
+        transition:
+            background-color 200ms ease,
+            color 200ms ease;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+        border-radius: var(--radius-md);
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    ::selection {
+        background: var(--color-lilac);
+        color: #252034;
+    }
+}
